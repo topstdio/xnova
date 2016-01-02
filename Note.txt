@@ -1,0 +1,13 @@
+关于时间的一些函数
+select rid from game_rw where time<unix_timestamp('2008-06-16');
+select from_unixtime(1212081591);
+select from_unixtime(time) from game_rw limit 0,10;
+
+清空星球资源
+update game_planets set `metal`=0,`crystal`=0,`deuterium`=0 where id=
+
+搜索资源为负数的星球
+select id,id_owner,destruyed,galaxy, system, planet, metal,crystal,deuterium from game_planets where metal<0 or crystal<0 or deuterium<0 
+
+查询DS最多的10个星球
+SELECT id, name, id_owner, galaxy, system, planet, dearth_star FROM game_planets ORDER BY dearth_star DESC LIMIT 0 , 10
